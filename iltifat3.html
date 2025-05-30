@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günün İltifatı</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #f9c5d1, #fddde6);
+            color: #4a4a4a;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background: #f8a5c2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #f78fb3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="compliment">Loading...</p>
+        <button onclick="getCompliment()">İltifatı Yenile</button>
+    </div>
+    <script>
+        const compliments = [
+            "Bugün harika görünüyorsun!",
+            "Gülüşün bir güneş gibi etrafı aydınlatıyor.",
+            "Ne kadar da zarif ve düşüncelisin.",
+            "Her zaman pozitif enerjinle fark yaratıyorsun.",
+            "Seninle konuşmak, günümü güzelleştiriyor.",
+            "Yaratıcılığın gerçekten etkileyici!",
+            "Sen her şeyi başarabilecek güçtesin.",
+            "Ne kadar da yardımsever ve iyi bir insansın.",
+            "Gözlerin birer yıldız gibi parlıyor.",
+            "Senin gibi birini tanımak büyük bir şans!"
+        ];
+
+        function getCompliment() {
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            document.getElementById("compliment").textContent = compliments[randomIndex];
+        }
+
+        // Display a random compliment on page load
+        window.onload = getCompliment;
+    </script>
+</body>
+</html>
